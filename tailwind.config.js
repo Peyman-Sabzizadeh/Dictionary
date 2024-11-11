@@ -2,7 +2,16 @@
 module.exports = {
   content: ["./*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "Poppins": "Poppins",
+        "PoppinsBold": "Poppins Bold"
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({addVariant}) {
+      addVariant("child","& > *");
+    }
+  ],
 }
